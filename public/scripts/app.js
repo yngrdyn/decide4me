@@ -1,9 +1,23 @@
 'use strict';
 
+var app = {
+  title: 'decime4me',
+  subtitle: 'The App for hesitant people'
+};
+
 var template = React.createElement(
-  'p',
+  'div',
   null,
-  'This is JSX from app.js!'
+  React.createElement(
+    'h1',
+    null,
+    app.title
+  ),
+  React.createElement(
+    'p',
+    null,
+    app.subtitle
+  )
 );
 
 var rootApp = document.getElementById('root-app');

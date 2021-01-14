@@ -1,6 +1,14 @@
-const template = <p>
-  This is JSX from app.js!
-</p>;
+const app = {
+  title: 'decime4me',
+  subtitle: 'The App for hesitant people',
+}
+
+const template = (
+  <div>
+    <h1>{app.title}</h1>
+    <p>{app.subtitle}</p>
+  </div>
+);
 
 const rootApp = document.getElementById('root-app');
 

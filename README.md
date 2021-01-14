@@ -1,5 +1,6 @@
-<img align="left" width="30" height="30" src="https://github.com/yngrdyn/decide4me/blob/main/public/favicon.ico" alt="The App for the hesitants">
+<img align="left" width="80" height="80" src="https://raw.githubusercontent.com/yngrdyn/decide4me/main/public/img/logo.png" alt="The App for hesitant people">
 
 # decide4me
+
 
 Helps you to pick randomly between a list of items

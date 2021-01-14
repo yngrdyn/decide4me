@@ -1,4 +1,9 @@
 {
+  "name": "decide4me",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Yngrid Coello",
+  "license": "MIT",
   "dependencies": {
     "live-server": "^1.2.1"
   }

@@ -5,6 +5,10 @@
   "author": "Yngrid Coello",
   "license": "MIT",
   "dependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1"
+  },
+  "devDependencies": {
     "live-server": "^1.2.1"
   }
 }

@@ -2,5 +2,4 @@
 
 # decide4me
 
-
-Helps you to pick randomly between a list of items
+decide4me is *The App* for hesitant people. It Helps you to pick randomly between a list of items.

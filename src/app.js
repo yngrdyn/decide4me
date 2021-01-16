@@ -6,8 +6,6 @@ import Options from './components/options/options';
 import Add from './components/add';
 
 const app = {
-  title: 'decime4me',
-  subtitle: 'The App for hesitant people',
   options: [],
 }
 
@@ -31,28 +29,20 @@ const onDecide4me = () => {
 
 class App extends Component {
   render() {
+    const title = 'decime4me';
+    const subtitle = 'The App for hesitant people';
+    const options = ['option 1', 'option 2', 'option 3'];
     return (
       <div>
-        <Header/>
+        <Header title={title} subtitle={subtitle}/>
         <Decision/>
-        <Options/>
+        <Options options={options}/>
         <Add/>
-        <h1>{app.title}</h1>
-        <p>{app.subtitle}</p>
         <button
           onClick={onDecide4me}
           disabled={app.options.length === 0}>
             Decide for me!
         </button>
-        {app.options.length < 1 && (
-          <p>No options</p>)}
-        {app.options.length > 0 && (
-          <button onClick={onRemoveAll}>Remove all options</button>)}
-        <ul>
-          {
-            app.options.map((option) => <li key={option}>{option}</li>)
-          }
-        </ul>
         <form onSubmit={onFormSubmit}>
           <input type="text" name="option"></input>
           <button>Add Option</button>

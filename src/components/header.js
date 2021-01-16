@@ -4,8 +4,8 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <h1>decide4me</h1>
-        <p>The App for hesitant people</p>
+        <h1>{this.props.title}</h1>
+        <p>{this.props.subtitle}</p>
       </div>
     );
   }

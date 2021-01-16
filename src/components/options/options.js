@@ -4,11 +4,27 @@ import Option from './option';
 class Options extends Component {
   render() {
     return (
-      <ul>
-        <li><Option/></li>
-        <li><Option/></li>
-        <li><Option/></li>
-      </ul>
+      <div>
+        <div className="options-header">
+          <span>Your options</span>
+          <button
+            disabled={!this.props.options || this.props.options.length === 0}>
+              Remove all options
+          </button>
+        </div>
+        <div className="options-content">
+          { this.props.options && this.props.options.length > 0
+            ? <ul>
+                {
+                  this.props.options.map((option) => 
+                    <li key={option}><Option option={option}/></li>
+                  )
+                }
+              </ul>
+            : <span>No options</span>
+          }
+        </div>
+      </div>
     );
   }
 }

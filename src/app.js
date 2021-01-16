@@ -31,22 +31,13 @@ class App extends Component {
   render() {
     const title = 'decime4me';
     const subtitle = 'The App for hesitant people';
-    const options = ['option 1', 'option 2', 'option 3'];
+    const options = [];
     return (
       <div>
         <Header title={title} subtitle={subtitle}/>
-        <Decision/>
+        <Decision disabled={options.length === 0}/>
         <Options options={options}/>
         <Add/>
-        <button
-          onClick={onDecide4me}
-          disabled={app.options.length === 0}>
-            Decide for me!
-        </button>
-        <form onSubmit={onFormSubmit}>
-          <input type="text" name="option"></input>
-          <button>Add Option</button>
-        </form>
       </div>
     );
   }

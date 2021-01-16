@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
 
 class Decision extends Component {
+  makeDecision() {
+    console.log('make decision!');
+  }
+
   render() {
     return (
       <div>
-        <button>Decide for me!</button>
+        <button
+          onClick={this.makeDecision}
+          disabled={this.props.disabled}>
+            Decide for me!
+        </button>
       </div>
     );
   }

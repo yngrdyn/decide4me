@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Decision extends Component {
-  render() {
-    return (
-      <div>
-        <button
-          onClick={this.props.decide}
-          disabled={this.props.disabled}>
-            Decide for me!
-        </button>
-      </div>
-    );
-  }
+const Decision = (props) => {
+  return (
+    <div>
+      <button
+        onClick={props.decide}
+        disabled={props.disabled}>
+          Decide for me!
+      </button>
+    </div>
+  );
 }
 
 export default Decision;

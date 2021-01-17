@@ -10,8 +10,9 @@ class App extends Component {
     super(props);
 
     this.addOption = this.addOption.bind(this);
-    this.decide = this.decide.bind(this);
+    this.removeOption = this.removeOption.bind(this);
     this.removeAllOptions = this.removeAllOptions.bind(this);
+    this.decide = this.decide.bind(this);
 
     this.state = {
       options: props.options,
@@ -25,25 +26,25 @@ class App extends Component {
       return 'This option already exists';
     }
 
-    this.setState((state) => {
-      return {
-        options: [...state.options, option],
-      }
-    });
+    this.setState((state) => ({
+      options: [...state.options, option],
+    }));
+  }
+
+  removeOption(option) {
+    this.setState((state) => ({
+      options: state.options.filter((stateOption) => stateOption !== option),
+    }));
+  }
+
+  removeAllOptions() {
+    this.setState(() => ({ options: [] }));
   }
 
   decide() {
     const randomIndex = Math.floor(Math.random() * this.state.options.length);
     const option = this.state.options[randomIndex];
     console.log(option);
-  }
-
-  removeAllOptions() {
-    this.setState(() => {
-      return {
-        options: [],
-      }
-    });
   }
 
   render() {
@@ -57,6 +58,7 @@ class App extends Component {
           disabled={this.state.options.length === 0}/>
         <Options
           options={this.state.options}
+          removeOption={this.removeOption}
           removeAllOptions={this.removeAllOptions}/>
         <Add
           addOption={this.addOption}/>

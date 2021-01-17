@@ -9,7 +9,7 @@ const Options = (props) => {
         <button
           onClick={props.removeAllOptions}
           disabled={!props.options || props.options.length === 0}>
-            Remove all options
+            Remove all
         </button>
       </div>
       <div className="options-content">
@@ -17,11 +17,14 @@ const Options = (props) => {
           ? <div>
               {
                 props.options.map((option) => 
-                  <Option key={option} option={option}/>
+                  <Option
+                    key={option}
+                    option={option}
+                    removeOption={props.removeOption}/>
                 )
               }
             </div>
-          : <span>No options</span>
+          : <span>Please add an option to get started!</span>
         }
       </div>
     </div>

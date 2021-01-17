@@ -14,7 +14,7 @@ class App extends Component {
     this.removeAllOptions = this.removeAllOptions.bind(this);
 
     this.state = {
-      options: [],
+      options: props.options,
     };
   }
 
@@ -47,11 +47,11 @@ class App extends Component {
   }
 
   render() {
-    const title = 'decime4me';
-    const subtitle = 'The App for hesitant people';
     return (
       <div>
-        <Header title={title} subtitle={subtitle}/>
+        <Header
+          title={this.props.title}
+          subtitle={this.props.subtitle}/>
         <Decision
           decide={this.decide}
           disabled={this.state.options.length === 0}/>
@@ -63,6 +63,12 @@ class App extends Component {
       </div>
     );
   }
+}
+
+App.defaultProps = {
+  title: 'decide4me',
+  subtitle: 'The App for hesitant people',
+  options: [],
 }
 
 ReactDOM.render(<App/>, document.getElementById('root-app'));

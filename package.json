@@ -19,6 +19,7 @@
     "file-loader": "^6.2.0",
     "live-server": "^1.2.1",
     "node-sass": "^5.0.0",
+    "normalize.css": "^8.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-modal": "^3.12.1",

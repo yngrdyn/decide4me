@@ -3,6 +3,7 @@ import Header from './header';
 import Decision from './decision';
 import Options from './options/options';
 import Add from './add';
+import Selected from './options/selected';
 
 class Decide4me extends Component {
   constructor(props) {
@@ -12,9 +13,11 @@ class Decide4me extends Component {
     this.removeOption = this.removeOption.bind(this);
     this.removeAllOptions = this.removeAllOptions.bind(this);
     this.decide = this.decide.bind(this);
+    this.clearSelectedOption = this.clearSelectedOption.bind(this);
 
     this.state = {
       options: [],
+      selectedOption: undefined,
     };
   }
 
@@ -61,7 +64,11 @@ class Decide4me extends Component {
   decide() {
     const randomIndex = Math.floor(Math.random() * this.state.options.length);
     const option = this.state.options[randomIndex];
-    console.log(option);
+    this.setState(() => ({ selectedOption: option }));
+  }
+
+  clearSelectedOption() {
+    this.setState(() => ({ selectedOption: undefined }));
   }
 
   render() {
@@ -79,6 +86,9 @@ class Decide4me extends Component {
           removeAllOptions={this.removeAllOptions}/>
         <Add
           addOption={this.addOption}/>
+        <Selected
+          selectedOption={this.state.selectedOption}
+          clearSelectedOption={this.clearSelectedOption}/>
       </div>
     );
   }

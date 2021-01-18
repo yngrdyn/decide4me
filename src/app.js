@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Decide4me from './components/decide4me';
+import './styles/styles.scss'; 
 
 const App = () => {
   return (

@@ -15,8 +15,16 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif|ico)$/,
-        use: ['file-loader?name=[name].[ext]']
+        use: ['file-loader?name=[name].[ext]'],
       },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      }
     ]
   },
   devtool: 'source-map',

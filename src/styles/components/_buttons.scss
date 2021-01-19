@@ -7,12 +7,13 @@
   font-size: $big-size;
   padding: 2.4rem;
   width: 100%;
+  margin-bottom: $extra-size;
 }
 
 .button {
   background: $purple;
   border: none;
-  border-bottom: .6rem solid darken($purple, 10%);
+  border-bottom: .3rem solid darken($purple, 10%);
   color: $white;
   font-weight: 500;
   padding: $small-size;

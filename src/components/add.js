@@ -26,13 +26,13 @@ class Add extends Component {
 
   render() {
     return (
-      <form onSubmit={this.addOption}>
+      <form onSubmit={this.addOption} className="add">
         <div>
           <input type="text" name="option"></input>
           <button className="button">Add Option</button>
         </div>
         {this.state.error &&
-          <span>{this.state.error}</span>}
+          <span className="add__error">{this.state.error}</span>}
       </form>
     );
   }

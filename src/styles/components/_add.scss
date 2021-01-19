@@ -1,0 +1,26 @@
+.add {
+  padding: $small-size;
+
+  > div {
+    display: flex;
+  }
+
+  input {
+    display: flex;
+    flex-grow: 1;
+    margin-right: $base-size;
+    background: $dark-blue;
+    border: none;
+    border-bottom: 0.3rem solid darken($dark-blue, 10%);
+    color: $white;
+    padding-left: $base-size;
+  }
+
+  &__error {
+    color: $off-white;
+    font-style: italic;
+    margin: $base-size 0;
+    padding: 0 $base-size;
+    display: flex;
+  }
+}

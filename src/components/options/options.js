@@ -14,7 +14,7 @@ const Options = (props) => (
     </div>
     <div className="widget-content">
       { props.options && props.options.length > 0
-        ? <div>
+        ? <div className="full-width">
             {
               props.options.map((option) => 
                 <Option

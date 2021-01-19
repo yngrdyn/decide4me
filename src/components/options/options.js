@@ -6,6 +6,7 @@ const Options = (props) => (
     <div className="options-header">
       <span>Your options</span>
       <button
+        className="button__link"
         onClick={props.removeAllOptions}
         disabled={!props.options || props.options.length === 0}>
           Remove all

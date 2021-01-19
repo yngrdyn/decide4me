@@ -29,7 +29,7 @@ class Add extends Component {
       <form onSubmit={this.addOption}>
         <div>
           <input type="text" name="option"></input>
-          <button>Add Option</button>
+          <button className="button">Add Option</button>
         </div>
         {this.state.error &&
           <span>{this.state.error}</span>}

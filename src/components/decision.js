@@ -1,8 +1,9 @@
 import React from 'react';
 
 const Decision = (props) => (
-  <div>
+  <div className="decision">
     <button
+      className="big-button"
       onClick={props.decide}
       disabled={props.disabled}>
         Decide for me!

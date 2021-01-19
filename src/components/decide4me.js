@@ -81,12 +81,14 @@ class Decide4me extends Component {
           <Decision
             decide={this.decide}
             disabled={this.state.options.length === 0}/>
-          <Options
-            options={this.state.options}
-            removeOption={this.removeOption}
-            removeAllOptions={this.removeAllOptions}/>
-          <Add
-            addOption={this.addOption}/>
+          <div className="full-width widget">
+            <Options
+              options={this.state.options}
+              removeOption={this.removeOption}
+              removeAllOptions={this.removeAllOptions}/>
+            <Add
+              addOption={this.addOption}/>
+          </div>
           <Selected
             selectedOption={this.state.selectedOption}
             clearSelectedOption={this.clearSelectedOption}/>

@@ -3,8 +3,8 @@ import Option from './option';
 
 const Options = (props) => (
   <div>
-    <div className="options-header">
-      <span>Your options</span>
+    <div className="widget-header">
+      <h3 className="widget-header__title">Your options</h3>
       <button
         className="button__link"
         onClick={props.removeAllOptions}
@@ -12,7 +12,7 @@ const Options = (props) => (
           Remove all
       </button>
     </div>
-    <div className="options-content">
+    <div className="widget-content">
       { props.options && props.options.length > 0
         ? <div>
             {

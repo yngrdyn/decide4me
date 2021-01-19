@@ -3,6 +3,7 @@ html {
 }
 
 body {
+  background: $dark-blue;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.6rem;
+  font-size: $base-size;
 }

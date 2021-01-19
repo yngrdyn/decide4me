@@ -77,18 +77,20 @@ class Decide4me extends Component {
         <Header
           title={this.props.title}
           subtitle={this.props.subtitle}/>
-        <Decision
-          decide={this.decide}
-          disabled={this.state.options.length === 0}/>
-        <Options
-          options={this.state.options}
-          removeOption={this.removeOption}
-          removeAllOptions={this.removeAllOptions}/>
-        <Add
-          addOption={this.addOption}/>
-        <Selected
-          selectedOption={this.state.selectedOption}
-          clearSelectedOption={this.clearSelectedOption}/>
+        <div className="container">
+          <Decision
+            decide={this.decide}
+            disabled={this.state.options.length === 0}/>
+          <Options
+            options={this.state.options}
+            removeOption={this.removeOption}
+            removeAllOptions={this.removeAllOptions}/>
+          <Add
+            addOption={this.addOption}/>
+          <Selected
+            selectedOption={this.state.selectedOption}
+            clearSelectedOption={this.clearSelectedOption}/>
+        </div>
       </div>
     );
   }

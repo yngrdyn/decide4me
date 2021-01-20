@@ -2,7 +2,7 @@
 
 # decide4me
 
-decide4me is *The App* for hesitant people. It Helps you to pick randomly between a list of items.
+decide4me is *The App* for hesitant people. It Helps you to pick randomly between a list of items. Checkout the **[Live version](https://yngrdyn.github.io/decide4me/)**
 
 ## Development
 _Easily set up a local development environment!_
@@ -11,8 +11,7 @@ _Easily set up a local development environment!_
 > yarn
 > yarn run dev-server
 ```
-
-**Start coding!** 🎉
+**Project will start in [http://localhost:8080](http://localhost:8080)!** 🎉
 
 ## Contributing
 All contributions are welcome!

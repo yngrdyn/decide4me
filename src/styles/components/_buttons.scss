@@ -7,7 +7,7 @@
   font-size: $big-size;
   padding: 2.4rem;
   width: 100%;
-  margin-bottom: $extra-size;
+  margin-bottom: $base-size;
 }
 
 .button {
@@ -23,5 +23,11 @@
     border: none;
     color: $off-white;
     padding: 0;
+  }
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .big-button {
+    margin-bottom: $extra-size;
   }
 }

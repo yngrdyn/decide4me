@@ -3,17 +3,19 @@
 
   > div {
     display: flex;
+    flex-direction: column;
   }
 
   input {
     display: flex;
     flex-grow: 1;
-    margin-right: $base-size;
+    margin-right: 0;
     background: $dark-blue;
     border: none;
     border-bottom: 0.3rem solid darken($dark-blue, 10%);
     color: $white;
-    padding-left: $base-size;
+    margin: 0 0 $small-size 0;
+    padding: $small-size;
   }
 
   &__error {
@@ -22,5 +24,18 @@
     margin: $base-size 0;
     padding: 0 $base-size;
     display: flex;
+  }
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .add {
+    > div {
+      flex-direction: row;
+    }
+
+    input {
+      margin: 0 $base-size 0 0;
+      padding: 0;
+    }
   }
 }

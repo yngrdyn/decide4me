@@ -30,7 +30,7 @@
 .modal {
   background: $light-blue;
   color: $white;
-  max-width: 50%;
+  max-width: 80%;
   outline: none;
   padding: $big-size;
 
@@ -45,5 +45,11 @@
     text-align: center;
     margin: 0 0 $big-size 0;
     word-break: break-all;
+  }
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .modal {
+    max-width: 50%;
   }
 }

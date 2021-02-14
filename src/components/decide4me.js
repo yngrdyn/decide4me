@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { isEmpty } from 'lodash';
+
 import Header from './header';
 import Decision from './decision';
 import Options from './options/options';
@@ -24,7 +26,18 @@ class Decide4me extends Component {
   componentDidMount() {
     try {
       const json = localStorage.getItem('options');
-      const options = JSON.parse(json);
+      const fromLocal = JSON.parse(json);
+
+      const search = this.props.location.search;
+      const fromURL = new URLSearchParams(search).get('options');
+
+      const options =
+      [...new Set(
+        [
+          ...fromLocal,
+          ...(isEmpty(fromURL) ? [] : fromURL.split(',')).filter(option => !isEmpty(option)),
+        ]
+      )];
 
       if (options) {
         this.setState(() => ({options}));

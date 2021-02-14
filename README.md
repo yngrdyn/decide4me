@@ -4,6 +4,8 @@
 
 decide4me is *The App* for hesitant people. It Helps you to pick randomly between a list of items. Checkout the **[Live version](https://yngrdyn.github.io/decide4me/)**
 
+<img src="https://github.com/yngrdyn/decide4me/blob/main/public/img/app.png?raw=true">
+
 ## Development
 _Easily set up a local development environment!_
 

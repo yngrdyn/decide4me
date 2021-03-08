@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { isEmpty } from 'lodash';
+import { isEmpty, remove } from 'lodash';
 
 import Header from './header';
 import Decision from './decision';
@@ -22,14 +22,14 @@ class Decide4me extends Component {
     this.state = {
       options: [],
       selectedOption: undefined,
-      removeAfterSelection: false
+      removeAfterSelection: false,
     };
   }
 
   componentDidMount() {
     try {
-      const json = localStorage.getItem('options');
-      const fromLocal = JSON.parse(json);
+      const stringifyOptions = localStorage.getItem('options');
+      const optionsFromLocal = JSON.parse(stringifyOptions);
 
       const search = this.props.location.search;
       const fromURL = new URLSearchParams(search).get('options');
@@ -37,21 +37,34 @@ class Decide4me extends Component {
       const options =
       [...new Set(
         [
-          ...fromLocal,
+          ...optionsFromLocal,
           ...(isEmpty(fromURL) ? [] : fromURL.split(',')).filter(option => !isEmpty(option)),
         ]
       )];
 
       if (options) {
-        this.setState(() => ({options}));
+        this.setState({options});
       }
+
+      const stringifySettings = localStorage.getItem('removeAfterSelection');
+      const removeAfterSelection = JSON.parse(stringifySettings);
+
+      if (removeAfterSelection) {
+        this.setState({removeAfterSelection});
+      }
+    
     } catch (e) { }
   }
 
   componentDidUpdate(_, prevState) {
     if (prevState.options.length !== this.state.options.length) {
-      const json = JSON.stringify(this.state.options);
-      localStorage.setItem('options', json);
+      const stringifyOptions = JSON.stringify(this.state.options);
+      localStorage.setItem('options', stringifyOptions);
+    }
+
+    if (prevState.removeAfterSelection !== this.state.removeAfterSelection) {
+      const stringifySettings = JSON.stringify(this.state.removeAfterSelection);
+      localStorage.setItem('removeAfterSelection', stringifySettings);
     }
   }
 
@@ -116,8 +129,8 @@ class Decide4me extends Component {
           </div>
           <div className="full-width">
             <Checkbox checked={this.state.removeAfterSelection}
-                      handleChange={this.changeRemovalAfterSelectionSetting}
-                      label={"Remove option after selection"}/>
+              handleChange={this.changeRemovalAfterSelectionSetting}
+              label={"Remove option after selection"}/>
           </div>
           <Selected
             selectedOption={this.state.selectedOption}

@@ -6,6 +6,7 @@ import Decision from './decision';
 import Options from './options/options';
 import Add from './add';
 import Selected from './options/selected';
+import Checkbox from "./checkbox/checkbox";
 
 class Decide4me extends Component {
   constructor(props) {
@@ -16,10 +17,12 @@ class Decide4me extends Component {
     this.removeAllOptions = this.removeAllOptions.bind(this);
     this.decide = this.decide.bind(this);
     this.clearSelectedOption = this.clearSelectedOption.bind(this);
+    this.changeRemovalAfterSelectionSetting = this.changeRemovalAfterSelectionSetting.bind(this);
 
     this.state = {
       options: [],
       selectedOption: undefined,
+      removeAfterSelection: false
     };
   }
 
@@ -81,7 +84,17 @@ class Decide4me extends Component {
   }
 
   clearSelectedOption() {
+    if(this.state.removeAfterSelection){
+      this.removeOption(this.state.selectedOption);
+    }
     this.setState(() => ({ selectedOption: undefined }));
+  }
+
+  changeRemovalAfterSelectionSetting(event) {
+    const value = event.target.checked;
+    this.setState(() => ({
+      removeAfterSelection: value
+    }));
   }
 
   render() {
@@ -94,6 +107,11 @@ class Decide4me extends Component {
           <Decision
             decide={this.decide}
             disabled={this.state.options.length === 0}/>
+          <div className="full-width ">
+            <Checkbox checked={this.state.removeAfterSelection}
+                      handleChange={this.changeRemovalAfterSelectionSetting}
+                      label={"Remove option after selection"}/>
+          </div>
           <div className="full-width widget">
             <Options
               options={this.state.options}

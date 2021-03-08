@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Checkbox = (props) => (
     <label className="checkbox-container">
         <input type="checkbox" checked={props.removeAfterSelection} onChange={props.handleChange}  />
@@ -8,8 +7,5 @@ const Checkbox = (props) => (
     </label>
 
 );
-
-
-
 
 export default Checkbox;

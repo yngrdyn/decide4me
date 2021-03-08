@@ -101,17 +101,11 @@ class Decide4me extends Component {
     return (
       <div>
         <Header
-          title={this.props.title}
-          subtitle={this.props.subtitle}/>
+          subtitle="The App for hesitant people"/>
         <div className="container">
           <Decision
             decide={this.decide}
             disabled={this.state.options.length === 0}/>
-          <div className="full-width ">
-            <Checkbox checked={this.state.removeAfterSelection}
-                      handleChange={this.changeRemovalAfterSelectionSetting}
-                      label={"Remove option after selection"}/>
-          </div>
           <div className="full-width widget">
             <Options
               options={this.state.options}
@@ -119,6 +113,11 @@ class Decide4me extends Component {
               removeAllOptions={this.removeAllOptions}/>
             <Add
               addOption={this.addOption}/>
+          </div>
+          <div className="full-width">
+            <Checkbox checked={this.state.removeAfterSelection}
+                      handleChange={this.changeRemovalAfterSelectionSetting}
+                      label={"Remove option after selection"}/>
           </div>
           <Selected
             selectedOption={this.state.selectedOption}

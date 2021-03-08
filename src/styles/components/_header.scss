@@ -2,7 +2,20 @@
   background: $off-black;
   color: $white;
   margin-bottom: $base-size;
-  padding: $base-size 0;
+  padding: $base-size 5%;
+  display: flex;
+  justify-content: left;
+
+  > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+  }
+
+  img {
+    width: $big-size;
+  }
 
   &__title {
     font-size: $big-size;
@@ -14,11 +27,13 @@
     font-size: $base-size;
     font-weight: 500;
     margin: 0;
+    display: flex;
   }
 }
 
 @media (min-width: $desktop-breakpoint) {
   .header {
+    padding: $base-size 20%;
     margin-bottom: $extra-size;
   }
 }

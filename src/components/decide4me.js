@@ -8,6 +8,18 @@ import Add from './add';
 import Selected from './options/selected';
 import Checkbox from "./checkbox/checkbox";
 
+// https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+const shuffle = (options) => {
+  const shuffleOptions = [...options];
+
+  for (let i = shuffleOptions.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [shuffleOptions[i], shuffleOptions[j]] = [shuffleOptions[j], shuffleOptions[i]];
+  }
+
+  return shuffleOptions;
+}
+
 class Decide4me extends Component {
   constructor(props) {
     super(props);
@@ -91,8 +103,9 @@ class Decide4me extends Component {
   }
 
   decide() {
-    const randomIndex = Math.floor(Math.random() * this.state.options.length);
-    const option = this.state.options[randomIndex];
+    const optionsSuffled = shuffle(this.state.options);
+    const randomIndex = Math.floor(Math.random() * optionsSuffled.length);
+    const option = optionsSuffled[randomIndex];
     this.setState(() => ({ selectedOption: option }));
   }
 
